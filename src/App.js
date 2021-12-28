@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.scss';
+import ApiHook from "./api.hook";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <section className="toDoListSection">
+        <div className="toDoList">
+          <div className="header d-flex flex-row justify-content-between align-items-center">
+            <h2>
+              Todo list
+            </h2>
+            <button type="button">
+              Add
+            </button>
+          </div>
+          <div className="toDos">
+            <ApiHook></ApiHook>
+          </div>
+        </div>
+      </section>
+      <footer className="footer">
+        © 2021 Vladimir Yankin
+      </footer>
+    </>);
 }
 
 export default App;

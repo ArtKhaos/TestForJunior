@@ -1,0 +1,146 @@
+@import "./reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$accentHover: #d95133;
+$accent: #ff8469;
+
+body {
+    background-color: #010920;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+}
+.toDoListSection {
+    height: 540px + 162px;
+    width: 420px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    .toDoList {
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        top: 162px;
+        background: #252e42;
+        box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        width: 420px;
+        height: 540px;
+        &::before {
+            content: "";
+            left: 1px;
+            z-index: -1;
+            position: absolute;
+            width: 341.86px;
+            height: 85.23px;
+            top: -41.05px;
+            background: #4f5565;
+            border-radius: 20px;
+            transform: rotate(-4.48deg);
+        }
+        &::after {
+            content: "";
+            left: 0;
+            z-index: -1;
+            position: absolute;
+            top: -25.3px;
+            background: #31394d;
+            border-radius: 20px;
+            transform: rotate(-2.32deg);
+            width: 395.1px;
+            height: 67.97px;
+        }
+        .header {
+            width: 100%;
+            button {
+                width: 54px;
+                height: 27px;
+                background: $accent;
+                border-radius: 7px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                text-transform: uppercase;
+                text-align: center;
+                color: #ffffff;
+                &:focus {
+                    opacity: 0.8;
+                }
+                &:hover {
+                    background: $accentHover;
+                }
+            }
+            h2 {
+                font-weight: bold;
+                font-size: 28px;
+                line-height: 34px;
+                color: #ffffff;
+            }
+        }
+        .toDos {
+            margin-top: 20px;
+            .toDo {
+                align-items: center;
+                display: flex;
+                flex-wrap: nowrap;
+                h3 {
+                    margin-top: 9px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #ffffff;
+                    &:hover {
+                        color: $accent;
+                    }
+                    &.checked {
+                        text-decoration-line: line-through;
+                    }
+                }
+                p {
+                    margin-top: 3px;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: #4f5565;
+                }
+                .toDo__text {
+                    width: 325px;
+                }
+                .toDoCheckbox {
+                    -webkit-appearance: none;
+                    background-color: $accent;
+                    margin-right: 15px;
+                    width: 20px;
+                    height: 20px;
+                    border: 0px;
+                    border-radius: 6px;
+                }
+                .toDoCheckbox::before {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    background-image: url("data:image/svg+xml;charset=UTF-8,%EF%BB%BF%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath fill='%2301285f' d='M0 0h30q10 0 10 10v30H10Q0 40 0 30zm2 2v28q0 8 8 8h28V10q0-8-8-8z'/%3E%3C/svg%3E");
+                    transform: scale(0);
+                    transform-origin: bottom left;
+                    transition: 120ms transform ease-in-out;
+                    box-shadow: inset 1em 1em var(--form-control-color);
+                    display: grid;
+                }
+                input[type="checkbox"]:checked::before {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+.footer {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #252e42;
+}
