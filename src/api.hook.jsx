@@ -3,6 +3,7 @@ import Checkbox from "react-custom-checkbox";
 
 const ApiHook = () => {
     const [isLoaded, setIsLoaded] = useState(false);
+    // eslint-disable-next-line
     const [toDos, setToDos] = useState("");
     const [toDoValues, setToDoValue] = useState([]);
     const [error, setError] = useState(false);
