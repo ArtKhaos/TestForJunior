@@ -3,6 +3,7 @@ import Checkbox from "react-custom-checkbox";
 
 const ApiHook = () => {
     const [isLoaded, setIsLoaded] = useState(false);
+    //it's for possible code update
     // eslint-disable-next-line
     const [toDos, setToDos] = useState("");
     const [toDoValues, setToDoValue] = useState([]);
@@ -16,7 +17,6 @@ const ApiHook = () => {
             let head;
             for (let i = 0; i < 4; i++) {
                 var rand = result[Math.floor((Math.random() * result.length))];
-                checked = rand.completed;
                 if ((Math.random() < 0.25 ? true : false)) {
                     description = rand.title;
                 }
@@ -24,7 +24,7 @@ const ApiHook = () => {
                     description = "";
                 }
                 head = result[Math.floor((Math.random() * result.length))].title
-                output.push({ id: i, head: head, checked: checked, description: description })
+                output.push({ id: i, head: head, checked: rand.completed, description: description })
             }
             setToDoValue(output);
             console.log(output)
