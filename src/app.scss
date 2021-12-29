@@ -16,6 +16,7 @@ body {
     margin-left: auto;
     position: relative;
     .toDoList {
+        transition-duration: 0.3s;
         margin-right: auto;
         margin-left: auto;
         position: absolute;
@@ -31,6 +32,7 @@ body {
         height: 540px;
         &::before {
             content: "";
+            transition-duration: 0.3s;
             left: 1px;
             z-index: -1;
             position: absolute;
@@ -43,6 +45,7 @@ body {
         }
         &::after {
             content: "";
+            transition-duration: 0.3s;
             left: 0;
             z-index: -1;
             position: absolute;
@@ -143,4 +146,30 @@ body {
     line-height: 20px;
     text-align: center;
     color: #252e42;
+}
+
+@media (max-width: 1024px) and (orientation: portrait) {
+    .toDoListSection {
+        height: 540px + 162px;
+        width: 397px;
+    .toDoList {
+        width: 397px;
+        height: 540px;
+        &::before {
+            content: "";
+            width: 307.23px;
+        }
+        &::after {
+            content: "";
+            width: 354.89px;
+        }
+        .toDos {
+            .toDo {
+                .toDo__text {
+                    width: 337px -45px;
+                }
+            }
+        }
+    }
+}
 }
