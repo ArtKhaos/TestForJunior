@@ -12,7 +12,6 @@ const ApiHook = () => {
     const getToDoBody = (result) => {
         if (result != null) {
             let output = [];
-            let checked;
             let description;
             let head;
             for (let i = 0; i < 4; i++) {
